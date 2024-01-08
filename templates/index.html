@@ -2,5 +2,17 @@
 
 {% extends 'layout.html' %}
 {% block content %}
-    
+    <div id="map"></div>
+
+    <!-- Add Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Your custom JavaScript for Leaflet map -->
+    <script>
+        // Set initial map center and zoom level
+        var map = L.map('map').setView([-1.286389, 36.817223], 6);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+    </script>
 {% endblock content %}
